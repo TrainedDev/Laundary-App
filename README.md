@@ -4,6 +4,10 @@ A full-stack order management system for laundry businesses, built with Node.js,
 
 ---
 
+🌐 Live Demo
+Frontend: https://laundary-app-seven.vercel.app
+Backend API: https://laundary-app-63ub.onrender.com
+
 ## 📁 Project Structure
 
 ```
@@ -250,28 +254,26 @@ Build a complete Mini Laundry Order Management System with:
 
 | Decision | Reason |
 |----------|--------|
-| Sequelize over Prisma | Wider tutorial ecosystem; easier raw SQL escape hatches |
-| Context API over Redux | Sufficient for auth state; no complex shared state needed |
-| JSONB for garments | Avoids a separate `OrderItem` table for this scale; still queryable in Postgres |
-| `alter: true` sync | Convenient for dev; **must be removed / replaced with migrations in production** |
-| No refresh tokens | Simplified auth for the scope; JWT expiry set to 7 days |
+| No payment integration (Razorpay/Stripe) | Simplified billing using calculated totals to focus on core order management features |
+| Token storage in localStorage | Chosen for simplicity over more secure options like HTTP-only cookies |
+| No caching layer (Redis) | Direct DB queries were sufficient for this scale; avoided added infrastructure complexity |
+| No advanced state management | Used Context API instead of Redux to keep frontend lightweight |
 
 ### Skipped (out of scope)
-- **Testing** — No Jest / Supertest unit or integration tests
-- **Input sanitization** — Basic Sequelize validation only; no `express-validator`
-- **Rate limiting** — No `express-rate-limit` on auth endpoints
-- **File uploads** — No receipt / image attachment support
+
+- Automated testing (Jest / Supertest)
+- Input validation using express-validator
+- API rate limiting and security hardening
+- Advanced caching (Redis)
 
 ### Future Improvements
-- 💳 Razorpay / Stripe payment integration
-- 🧾 PDF receipt generation per order
-- 📱 Push notifications when order is READY
-- 🔄 Sequelize migrations instead of `sync`
-- 🧪 Jest + Supertest test suite
-- 👥 Multi-tenant / shop support
-- 📊 Date-range revenue charts
 
----
+- 💳 Payment integration (Razorpay / Stripe)
+- 🧪 Unit, API, and E2E testing
+- ⭐ Customer feedback system
+- 🎨 Improved UI/UX with better design system
+- ⚡ Add caching layer (Redis) for performance optimization
+
 
 ## 🚀 Quick Start (TL;DR)
 
