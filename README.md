@@ -8,6 +8,26 @@ A full-stack order management system for laundry businesses, built with Node.js,
 Frontend: https://laundary-app-seven.vercel.app
 Backend API: https://laundary-app-63ub.onrender.com
 
+⚠️ Note: Backend may take ~30 seconds to start (Render free tier)
+
+## ⚡ Quick Demo
+
+1. Open the frontend link  
+2. Register or login  
+3. Create a laundry order  
+4. View and update order status  
+
+## 📸 Screenshots
+
+### Login Page
+![Login](./screenshots/login.png)
+
+### Create Order
+![Create Order](./screenshots/create-order.png)
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
 ## 📁 Project Structure
 
 ```
